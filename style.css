@@ -102,3 +102,13 @@ video {
 .sound-picker button img {
   height: 80%;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .time-select button {
+    border: none;
+  }
+}
