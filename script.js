@@ -11,7 +11,7 @@ const outlineLength = outline.getTotalLength();
 
 const timeSelect = document.querySelectorAll(".time-select button");
 
-let fakeDuration = 600.0;
+let fakeDuration = 600;
 
 outline.style.strokeDasharray = outlineLength;
 outline.style.strokeDashoffset = outlineLength;
@@ -35,9 +35,9 @@ play.addEventListener("click", () => {
 timeSelect.forEach((option) => {
   option.addEventListener("click", function () {
     fakeDuration = this.getAttribute("data-time");
-    timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
-      fakeDuration % 60
-    )}`;
+    timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${
+      "0" + Math.floor(fakeDuration % 60)
+    }`;
   });
 });
 
