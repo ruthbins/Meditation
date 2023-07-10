@@ -58,6 +58,10 @@ song.ontimeupdate = () => {
   let seconds = Math.floor(elapsed % 60);
   let minutes = Math.floor(elapsed / 60);
 
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
   timeDisplay.textContent = `${minutes}:${seconds}`;
 
   let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
