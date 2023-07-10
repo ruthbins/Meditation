@@ -11,14 +11,14 @@ const outlineLength = outline.getTotalLength();
 
 const timeSelect = document.querySelectorAll(".time-select button");
 
-let fakeDuration = 600;
+let fakeDuration = 600.0;
 
 outline.style.strokeDasharray = outlineLength;
 outline.style.strokeDashoffset = outlineLength;
 
-timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
-  fakeDuration % 60
-)}`;
+timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${
+  "0" + Math.floor(fakeDuration % 60)
+}`;
 
 sounds.forEach((sound) => {
   sound.addEventListener("click", function () {
